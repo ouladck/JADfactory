@@ -1,0 +1,7 @@
+#!/bin/bash
+
+FILE=$1
+JAD="${FILE%.*}.jad"
+unzip -aa -j -p ${FILE} "META-INF/MANIFEST.MF" | sed -e '/^[ \t]*$/d' > "${JAD}"
+exit 0
+

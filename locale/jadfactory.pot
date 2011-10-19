@@ -1,0 +1,141 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2011 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# كريم أولاد الشلحة <herr.linux88@gmail.com, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: JADfactory Beta v0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-10-12 23:55+0000\n"
+"PO-Revision-Date: 2011-10-12 23:58-0000\n"
+"Last-Translator: كريم أولاد الشلحة <herr.linux88@gmail.com>\n"
+"Language-Team: JADfactory Team <herr.linux88@gmail.com>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Arabic\n"
+"X-Poedit-Country: Morocco\n"
+
+#: jadfactory.py:22
+#, python-format
+msgid ""
+"The file:\n"
+"%s\n"
+" is not a \".jar\" file"
+msgstr ""
+
+#: jadfactory.py:29
+#, python-format
+msgid ""
+"The file:\n"
+"%s not exist\n"
+"Make sure to print the correct path name\n"
+"Or use \"select a file\" button"
+msgstr ""
+
+#: jadfactory.py:38
+#: jadfactory.py:84
+#, python-format
+msgid ""
+"File:\n"
+"%s\n"
+"   Is already exists\n"
+msgstr ""
+
+#: jadfactory.py:52
+#: jadfactory.py:95
+#, python-format
+msgid ""
+"File : %s\n"
+"has created"
+msgstr ""
+
+#: jadfactory.py:60
+#: jadfactory.py:162
+msgid "Select a file"
+msgstr ""
+
+#: jadfactory.py:68
+msgid "JAD file"
+msgstr ""
+
+#: jadfactory.py:105
+msgid "You don't select any file!"
+msgstr ""
+
+#: jadfactory.py:115
+#: jadfactory.py:133
+#: jadfactory.py:142
+msgid "JADfactory"
+msgstr ""
+
+#: jadfactory.py:116
+msgid "Beta v0.1"
+msgstr ""
+
+#: jadfactory.py:117
+msgid ""
+"This is a simple Application\n"
+"to make jad files for *.jar"
+msgstr ""
+
+#: jadfactory.py:118
+msgid "Copyright © 2011 Karim Oulad Chalha"
+msgstr ""
+
+#: jadfactory.py:119
+msgid ""
+"GPLv3\n"
+"See http://www.gnu.org/copyleft/gpl.html"
+msgstr ""
+
+#: jadfactory.py:120
+msgid "http://www.Jadfactory.co.cc"
+msgstr ""
+
+#: jadfactory.py:121
+msgid "translator-credits"
+msgstr ""
+
+#: jadfactory.py:134
+msgid "Welcome in JADfactory Beta v0.1"
+msgstr ""
+
+#: jadfactory.py:135
+msgid ""
+"\n"
+"NOTE :The name of file\n"
+"should not contient a space like:\n"
+"\"name file.jar\"\n"
+"make sure to rename it like:\n"
+"\"namefile.jar\" or \"name_file.jar\" , \"name-file.jar\" ,....\n"
+msgstr ""
+
+#: jadfactory.py:154
+msgid "run"
+msgstr ""
+
+#: jadfactory.py:156
+msgid "Run to make *.jad file"
+msgstr ""
+
+#: jadfactory.py:159
+msgid "Type path here"
+msgstr ""
+
+#: jadfactory.py:164
+msgid "Select a *.jar file"
+msgstr ""
+
+#: jadfactory.py:166
+#: jadfactory.py:168
+msgid "About"
+msgstr ""
+
+#: jadfactory.py:170
+#: jadfactory.py:172
+msgid "Quit"
+msgstr ""
+

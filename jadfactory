@@ -1,0 +1,216 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import gtk, pygtk, os, sys, shutil, string, gettext, locale
+from gettext import gettext as _
+
+
+# setup translation support
+APP = "jadfactory"
+DIR = "/usr/share/locale"
+gettext.bindtextdomain(APP, DIR)
+gettext.textdomain(APP)
+_ = gettext.gettext
+
+
+class JADbuilder:
+      def run(self, widget):
+             jar = ".jar"
+             file = self.textbox.get_text()
+             #Frist check
+             if file[-4:] != jar:
+                    fristmsg = gtk.MessageDialog(None, gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_INFO, gtk.BUTTONS_CLOSE, _("""The file:\n%s\n is not a ".jar" file""") % file)
+
+                    fristmsg.run()
+                    fristmsg.destroy()
+             else:
+                    #Safety check 1
+                    if os.path.exists(file) == False:
+                           msg0 = gtk.MessageDialog(None, gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_INFO, gtk.BUTTONS_CLOSE, _("""The file:\n%s not exist\nMake sure to print the correct path name\nOr use "select a file" button""") % file)
+
+                           msg0.run()
+                           msg0.destroy()
+
+                    elif os.path.exists(file) == True:
+                           jad = file[0:-4]+".jad"
+                           if os.path.exists(jad) == True:
+                                  print "True"
+                                  msg7 = gtk.MessageDialog(None, gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_INFO, gtk.BUTTONS_CLOSE, _("File:\n%s\n   Is already exists\n") % jad)
+
+                                  msg7.run()
+                                  msg7.destroy()
+
+                           elif os.path.exists(jad) == False:
+                                  FILE = os.path.basename('%s' % self.textbox.get_text())
+                                  size = os.path.getsize('%s' % self.textbox.get_text())
+                                  os.system("jadunzip %s" % file)
+                                  O = open(jad, 'a')
+                                  print >> O, "MIDlet-Jar-URL: %s" % FILE
+                                  print >> O, "MIDlet-Info-URL: http://"
+                                  print >> O, "MIDlet-Jar-Size: %s" % size
+                                  O.close()
+                                  msg2 = gtk.MessageDialog(None, gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_INFO, gtk.BUTTONS_CLOSE, _("File : %s\nhas created") % jad)
+
+                                  msg2.run()
+                                  msg2.destroy()
+                    
+
+
+      def fileChooser(self, wiget):
+             fs = gtk.FileChooserDialog(_("Select a file"), None, 
+                    gtk.FILE_CHOOSER_ACTION_OPEN, 
+                    (gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL, 
+                    gtk.STOCK_OPEN, gtk.RESPONSE_OK)) 
+
+             fs.set_default_response(gtk.RESPONSE_OK)
+
+             filter = gtk.FileFilter()
+             filter.set_name(_("JAD file"))
+             filter.add_pattern("*.jar")
+             filter.add_pattern("*.JAR")
+
+             fs.add_filter(filter)
+
+             response = fs.run()
+             if response == gtk.RESPONSE_OK:
+                    print "Selected filepath: %s" % fs.get_filename()
+                    FILE = os.path.basename('%s' % fs.get_filename())
+                    size = os.path.getsize('%s' % fs.get_filename())
+                    #Safety check1
+                    filename = fs.get_filename()
+                    jad = filename[0:-4]+".jad"
+                    if os.path.exists(jad) == True:
+                           print "True"
+                           msg = gtk.MessageDialog(None, gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_INFO, gtk.BUTTONS_CLOSE, _("File:\n%s\n   Is already exists\n") % jad)
+
+                           msg.run()
+                           msg.destroy()
+                    else:
+                           os.system("jadunzip %s" % filename)
+                           O = open(jad, 'a')
+                           print >> O, "MIDlet-Jar-URL: %s" % FILE
+                           print >> O, "MIDlet-Info-URL: http://"
+                           print >> O, "MIDlet-Jar-Size: %s" % size
+                           O.close()
+                           msg1 = gtk.MessageDialog(None, gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_INFO, gtk.BUTTONS_CLOSE, _("File : %s\nhas created") % jad)
+
+                           msg1.run()
+                           msg1.destroy()
+
+                    
+
+             elif response == gtk.RESPONSE_CANCEL:
+                    print "You don't select any file!"
+                    error = gtk.MessageDialog(None, gtk.DIALOG_DESTROY_WITH_PARENT, 
+                    gtk.MESSAGE_ERROR, gtk.BUTTONS_CLOSE, _("You don't select any file!"))
+
+                    error.run()
+                    error.destroy()
+
+             fs.destroy()
+ 
+      def about_win(self, widget):
+             about = gtk.AboutDialog()
+             about.set_icon(gtk.gdk.pixbuf_new_from_file("/usr/share/pixmaps/jadfactory64.png"))
+             about.set_logo(gtk.gdk.pixbuf_new_from_file("/usr/share/pixmaps/jadfactory/jadfactory180.png"))
+             about.set_program_name(_("JADfactory"))
+             about.set_version(_("Beta v0.1"))
+             about.set_comments(_("This is a simple Application\nto make jad files for *.jar"))
+             about.set_copyright(_("Copyright © 2011 Karim Oulad Chalha"))
+             about.set_license(_("GPLv3\nSee http://www.gnu.org/copyleft/gpl.html"))
+             about.set_website(_("http://www.Jadfactory.co.cc"))
+             about.set_translator_credits(_("translator-credits"))
+             about.run()
+             about.destroy()
+
+      def destroy(self, widget):
+             gtk.main_quit()
+
+      def delete(self, widget):
+             return False
+
+      def __init__(self):
+             self.win = gtk.Window(gtk.WINDOW_TOPLEVEL)                        #Main window
+             self.win.set_icon(gtk.gdk.pixbuf_new_from_file("/usr/share/pixmaps/jadfactory64.png"))
+             self.win.set_title(_("JADfactory"))
+             self.label = gtk.Label(_("""Welcome in JADfactory Beta v0.1"""))
+             self.label1 = gtk.Label(_("""\nNOTE :The name of file\nshould not contient a space like:\n"name file.jar"\nmake sure to rename it like:\n"namefile.jar" or "name_file.jar" , "name-file.jar" ,....\n"""))
+             self.win.set_position(gtk.WIN_POS_CENTER)
+             self.win.set_default_size(350, 200)
+
+
+             self.image = gtk.Image()                                          #Image
+             self.image.set_from_file("/usr/share/pixmaps/jadfactory/jadfactory.png")
+             self.image.set_tooltip_text(_("JADfactory"))
+
+             self.hs = gtk.HSeparator()                                        #Horizontal separator
+
+             self.hs1 = gtk.HSeparator()                                       #// //  // //1
+
+             self.hs2 = gtk.HSeparator()                                       #// //  // //2
+
+             self.info = gtk.InfoBar()                                         #Info Bar
+             self.content = self.info.get_content_area()
+             self.content.add(self.label1)
+
+             self.rb = gtk.Button(_("run"))                                    #Run button
+             self.rb.connect("clicked", self.run)
+             self.rb.set_tooltip_text(_("Run to make *.jad file"))
+
+             self.textbox = gtk.Entry()                                        #Entry
+             self.textbox.set_text(_("Type path here"))
+             self.textbox.connect("activate", self.run)
+
+             self.filebutton = gtk.Button(_("Select a file"))                  #Filechooser button
+             self.filebutton.connect("clicked", self.fileChooser)
+             self.filebutton.set_tooltip_text(_("Select a *.jar file"))
+
+             self.b0 = gtk.Button(_("About"))                                  #About button
+             self.b0.connect("clicked", self.about_win)
+             self.b0.set_tooltip_text(_("About"))
+
+             self.b1 = gtk.Button(_("Quit"))                                   #Quit button
+             self.b1.connect("clicked", self.destroy)
+             self.b1.set_tooltip_text(_("Quit"))
+
+             self.box6 = gtk.HBox()                                            #Box6
+             self.box6.pack_start(self.textbox)
+             self.box6.pack_start(self.rb, False)
+
+             self.box5 = gtk.HBox()                                            #Box5
+
+             self.box4 = gtk.HBox()                                            #Box4
+             self.box4.pack_start(self.filebutton, False, False)
+             self.box4.add(self.box5)
+
+             self.box1 = gtk.VBox()                                            #Box1
+             self.box1.pack_start(self.label, False)
+             self.box1.pack_start(self.image, False)
+             self.box1.add(self.hs1)
+             self.box1.pack_start(self.info, False, False)
+             self.box1.add(self.hs2)
+             self.box1.pack_start(self.box6)
+             self.box1.add(self.box4)
+
+             self.box3 = gtk.HBox()                                            #Box3
+
+             self.box2 = gtk.HBox()                                            #Box2
+             self.box2.pack_start(self.b0, False)
+             self.box2.add(self.box3)
+             self.box2.pack_start(self.b1, False)
+
+             self.box0 = gtk.VBox()                                            #Box0
+             self.box0.pack_start(self.box1)
+             self.box0.add(self.hs)
+             self.box0.pack_start(self.box2, False)
+
+             self.win.add(self.box0)
+             self.win.show_all()
+             self.win.connect("destroy", self.destroy)
+
+      def main(self):
+             gtk.main()
+
+if __name__ == "__main__":
+      base = JADbuilder()
+      base.main()

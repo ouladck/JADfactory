@@ -1,0 +1,11 @@
+	English:
+# To install JADfactory type in Terminal:
+# "sudo sh setup.sh" or "su ./setup.sh" without ""
+
+# To uninstall JADfactory type in Terminal:
+# "sudo sh uninstall.sh" or "su ./uninstall.sh" without ""
+        عربية:
+# لتثبيت مصنع جاد أكتب في الطرفية:
+# "sudo sh setup.sh" أو "su ./setup.sh" بدون ""
+# لإلغاء تثبيت مصنع جاد أكتب في الطرفية:
+# "sudo sh uninstall.sh" أو "su ./uninstall.sh" بدون ""

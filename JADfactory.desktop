@@ -1,0 +1,17 @@
+
+[Desktop Entry]
+Type=Application
+Name=JADfactory.desktop
+Name[ar]=مصنع جاد
+GenericName=JADfactory
+GenericName[ar]=مصنع جاد
+Comment=A simple app to make jad files
+Comment[ar]=تطبيق بسيط لإنشاء ملفات jad
+Terminal=false
+TryExec=jadfactory
+Exec=jadfactory %F
+Icon=jadfactory
+MimeType=application/x-J2ME;
+Categories=GTK;Utility;
+StartupNotify=false
+Actions=open;
