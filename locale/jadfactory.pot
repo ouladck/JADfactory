@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: JADfactory Beta v0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-12 23:55+0000\n"
-"PO-Revision-Date: 2011-10-12 23:58-0000\n"
+"POT-Creation-Date: 2011-10-25 23:35+0000\n"
+"PO-Revision-Date: 2011-10-25 23:37-0000\n"
 "Last-Translator: كريم أولاد الشلحة <herr.linux88@gmail.com>\n"
 "Language-Team: JADfactory Team <herr.linux88@gmail.com>\n"
 "Language: \n"
@@ -53,7 +53,8 @@ msgid ""
 msgstr ""
 
 #: jadfactory.py:60
-#: jadfactory.py:162
+#: jadfactory.py:155
+#: jadfactory.py:206
 msgid "Select a file"
 msgstr ""
 
@@ -65,45 +66,45 @@ msgstr ""
 msgid "You don't select any file!"
 msgstr ""
 
-#: jadfactory.py:115
-#: jadfactory.py:133
-#: jadfactory.py:142
+#: jadfactory.py:116
+#: jadfactory.py:144
+#: jadfactory.py:186
 msgid "JADfactory"
 msgstr ""
 
-#: jadfactory.py:116
+#: jadfactory.py:117
 msgid "Beta v0.1"
 msgstr ""
 
-#: jadfactory.py:117
+#: jadfactory.py:118
 msgid ""
 "This is a simple Application\n"
 "to make jad files for *.jar"
 msgstr ""
 
-#: jadfactory.py:118
+#: jadfactory.py:119
 msgid "Copyright © 2011 Karim Oulad Chalha"
 msgstr ""
 
-#: jadfactory.py:119
+#: jadfactory.py:120
 msgid ""
 "GPLv3\n"
 "See http://www.gnu.org/copyleft/gpl.html"
 msgstr ""
 
-#: jadfactory.py:120
+#: jadfactory.py:121
 msgid "http://www.Jadfactory.co.cc"
 msgstr ""
 
-#: jadfactory.py:121
+#: jadfactory.py:122
 msgid "translator-credits"
 msgstr ""
 
-#: jadfactory.py:134
+#: jadfactory.py:145
 msgid "Welcome in JADfactory Beta v0.1"
 msgstr ""
 
-#: jadfactory.py:135
+#: jadfactory.py:146
 msgid ""
 "\n"
 "NOTE :The name of file\n"
@@ -113,29 +114,51 @@ msgid ""
 "\"namefile.jar\" or \"name_file.jar\" , \"name-file.jar\" ,....\n"
 msgstr ""
 
-#: jadfactory.py:154
-msgid "run"
+#: jadfactory.py:151
+msgid "File"
+msgstr ""
+
+#: jadfactory.py:152
+msgid "Help"
 msgstr ""
 
 #: jadfactory.py:156
-msgid "Run to make *.jad file"
+#: jadfactory.py:214
+#: jadfactory.py:216
+msgid "Quit"
 msgstr ""
 
-#: jadfactory.py:159
-msgid "Type path here"
+#: jadfactory.py:161
+msgid "What is JAD file?"
+msgstr ""
+
+#: jadfactory.py:162
+msgid "Translate this application"
+msgstr ""
+
+#: jadfactory.py:163
+msgid "Report a bug"
 msgstr ""
 
 #: jadfactory.py:164
-msgid "Select a *.jar file"
-msgstr ""
-
-#: jadfactory.py:166
-#: jadfactory.py:168
+#: jadfactory.py:210
+#: jadfactory.py:212
 msgid "About"
 msgstr ""
 
-#: jadfactory.py:170
-#: jadfactory.py:172
-msgid "Quit"
+#: jadfactory.py:198
+msgid "run"
+msgstr ""
+
+#: jadfactory.py:200
+msgid "Run to make *.jad file"
+msgstr ""
+
+#: jadfactory.py:203
+msgid "Type path here"
+msgstr ""
+
+#: jadfactory.py:208
+msgid "Select a *.jar file"
 msgstr ""
 

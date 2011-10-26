@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import gtk, pygtk, os, sys, shutil, string, gettext, locale
+import gtk, pygtk, os, sys, shutil, string, gettext, locale, webbrowser
 from gettext import gettext as _
 
 
@@ -129,6 +129,15 @@ class JADbuilder:
       def delete(self, widget):
              return False
 
+      def whatjad(self, widget):
+             webbrowser.open("http://en.wikipedia.org/wiki/JAD_(file_format)")
+
+      def translation(self, widget):
+             webbrowser.open("https://www.transifex.net/projects/p/jadfactory/")
+
+      def report(self, widget):
+             webbrowser.open("http://github.com/karim88/JADfactory/issues")
+
       def __init__(self):
              self.win = gtk.Window(gtk.WINDOW_TOPLEVEL)                        #Main window
              self.win.set_icon(gtk.gdk.pixbuf_new_from_file("/usr/share/pixmaps/jadfactory64.png"))
@@ -137,6 +146,39 @@ class JADbuilder:
              self.label1 = gtk.Label(_("""\nNOTE :The name of file\nshould not contient a space like:\n"name file.jar"\nmake sure to rename it like:\n"namefile.jar" or "name_file.jar" , "name-file.jar" ,....\n"""))
              self.win.set_position(gtk.WIN_POS_CENTER)
              self.win.set_default_size(350, 200)
+
+             self.menu = gtk.MenuBar()                                         #Menubar
+             self.file = gtk.MenuItem(_("File"))
+             self.help = gtk.MenuItem(_("Help"))
+
+             self.file_sub = gtk.Menu()                                        #Sub menu of file
+             self.chooser = gtk.MenuItem(_("Select a file"))
+             self.quit = gtk.MenuItem(_("Quit"))
+             self.file_sub.append(self.chooser)
+             self.file_sub.append(self.quit)
+
+             self.help_sub = gtk.Menu()                                        #Sub menu of help
+             self.what = gtk.MenuItem(_("What is JAD file?"))
+             self.trans = gtk.MenuItem(_("Translate this application"))
+             self.bug = gtk.MenuItem(_("Report a bug"))
+             self.apropos = gtk.MenuItem(_("About"))
+             self.help_sub.append(self.what)
+             self.help_sub.append(self.trans)
+             self.help_sub.append(self.bug)
+             self.help_sub.append(self.apropos)
+
+             self.file.set_submenu(self.file_sub)
+             self.help.set_submenu(self.help_sub)
+
+             self.menu.append(self.file)
+             self.menu.append(self.help)
+
+             self.chooser.connect("activate", self.fileChooser)
+             self.quit.connect("activate", self.destroy)
+             self.what.connect("activate", self.whatjad)
+             self.trans.connect("activate",self.translation)
+             self.bug.connect("activate", self.report)
+             self.apropos.connect("activate", self.about_win)
 
 
              self.image = gtk.Image()                                          #Image
@@ -184,8 +226,8 @@ class JADbuilder:
              self.box4.add(self.box5)
 
              self.box1 = gtk.VBox()                                            #Box1
+             self.box1.pack_start(self.menu, False)
              self.box1.pack_start(self.label, False)
-             self.box1.pack_start(self.image, False)
              self.box1.add(self.hs1)
              self.box1.pack_start(self.info, False, False)
              self.box1.add(self.hs2)

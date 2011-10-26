@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: JADfactory Beta v0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-12 23:55+0000\n"
-"PO-Revision-Date: 2011-10-13 00:09-0000\n"
+"POT-Creation-Date: 2011-10-25 23:35+0000\n"
+"PO-Revision-Date: 2011-10-25 23:42-0000\n"
 "Last-Translator: كريم أولاد الشلحة <herr.linux88@gmail.com>\n"
 "Language-Team: JADfactory Team <herr.linux88@gmail.com>\n"
 "Language: \n"
@@ -65,7 +65,8 @@ msgstr ""
 "%s"
 
 #: jadfactory.py:60
-#: jadfactory.py:162
+#: jadfactory.py:155
+#: jadfactory.py:206
 msgid "Select a file"
 msgstr "حدد ملف"
 
@@ -77,17 +78,17 @@ msgstr "ملف JAD"
 msgid "You don't select any file!"
 msgstr "لم تفم بتحديد أي ملف!"
 
-#: jadfactory.py:115
-#: jadfactory.py:133
-#: jadfactory.py:142
+#: jadfactory.py:116
+#: jadfactory.py:144
+#: jadfactory.py:186
 msgid "JADfactory"
 msgstr "مصنع جاد"
 
-#: jadfactory.py:116
+#: jadfactory.py:117
 msgid "Beta v0.1"
 msgstr "نسخة التجريبية 0.1"
 
-#: jadfactory.py:117
+#: jadfactory.py:118
 msgid ""
 "This is a simple Application\n"
 "to make jad files for *.jar"
@@ -95,11 +96,11 @@ msgstr ""
 "هذا تطبيق بسيط\n"
 "لإنشاء ملفات jad من ملف *.jar"
 
-#: jadfactory.py:118
+#: jadfactory.py:119
 msgid "Copyright © 2011 Karim Oulad Chalha"
 msgstr "حقوق النشر © 2011 كريم أولاد الشلحة"
 
-#: jadfactory.py:119
+#: jadfactory.py:120
 msgid ""
 "GPLv3\n"
 "See http://www.gnu.org/copyleft/gpl.html"
@@ -107,19 +108,19 @@ msgstr ""
 "رخصة جنو العمومية نسخة 3\n"
 "See http://www.gnu.org/copyleft/gpl.html"
 
-#: jadfactory.py:120
+#: jadfactory.py:121
 msgid "http://www.Jadfactory.co.cc"
 msgstr "http://www.Jadfactory.co.cc"
 
-#: jadfactory.py:121
+#: jadfactory.py:122
 msgid "translator-credits"
 msgstr "كريم أولاد الشلحة <herr.linux88@gmail.com>"
 
-#: jadfactory.py:134
+#: jadfactory.py:145
 msgid "Welcome in JADfactory Beta v0.1"
 msgstr "مرحبا بكم في النسخة التجريبية لـ مصنع جاد v0.1"
 
-#: jadfactory.py:135
+#: jadfactory.py:146
 msgid ""
 "\n"
 "NOTE :The name of file\n"
@@ -135,29 +136,51 @@ msgstr ""
 "تأكد من إعادة تسميته إلى:\n"
 "\"namefile.jar\" أو \"name_file.jar\" , \"name-file.jar\" ,....\n"
 
-#: jadfactory.py:154
-msgid "run"
-msgstr "شغل"
+#: jadfactory.py:151
+msgid "File"
+msgstr "ملف"
+
+#: jadfactory.py:152
+msgid "Help"
+msgstr "المساعدة"
 
 #: jadfactory.py:156
-msgid "Run to make *.jad file"
-msgstr "شغل لإنشاء ملف *.jad"
+#: jadfactory.py:214
+#: jadfactory.py:216
+msgid "Quit"
+msgstr "خروج"
 
-#: jadfactory.py:159
-msgid "Type path here"
-msgstr "أكتب مسار الملف هنا"
+#: jadfactory.py:161
+msgid "What is JAD file?"
+msgstr "من هو ملف JAD؟"
+
+#: jadfactory.py:162
+msgid "Translate this application"
+msgstr "ترجم هذا التطبيق..."
+
+#: jadfactory.py:163
+msgid "Report a bug"
+msgstr "أبلغ عن خلل ..."
 
 #: jadfactory.py:164
-msgid "Select a *.jar file"
-msgstr "حدد ملف *.jar"
-
-#: jadfactory.py:166
-#: jadfactory.py:168
+#: jadfactory.py:210
+#: jadfactory.py:212
 msgid "About"
 msgstr "حول"
 
-#: jadfactory.py:170
-#: jadfactory.py:172
-msgid "Quit"
-msgstr "خروج"
+#: jadfactory.py:198
+msgid "run"
+msgstr "شغل"
+
+#: jadfactory.py:200
+msgid "Run to make *.jad file"
+msgstr "شغل لإنشاء ملف *.jad"
+
+#: jadfactory.py:203
+msgid "Type path here"
+msgstr "أكتب مسار الملف هنا"
+
+#: jadfactory.py:208
+msgid "Select a *.jar file"
+msgstr "حدد ملف *.jar"
 
