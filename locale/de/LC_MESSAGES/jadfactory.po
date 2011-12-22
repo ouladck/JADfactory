@@ -1,0 +1,189 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2011 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Translators:
+# Karim Oulad Chalha <herr-linux@hotmail.fr>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: JADfactory\n"
+"Report-Msgid-Bugs-To: http://github.com/karim88/JADfactory/issues\n"
+"POT-Creation-Date: 2011-10-25 23:35+0000\n"
+"PO-Revision-Date: 2011-12-17 19:23-0000\n"
+"Last-Translator: كريم أولاد الشلحة <herr.linux88@gmail.com>\n"
+"Language-Team: JADfactory Team <herr.linux88@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: de\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"X-Poedit-Country: Morocco\n"
+"X-Poedit-Language: Arabic\n"
+
+#: jadfactory.py:22
+#, python-format
+msgid ""
+"The file:\n"
+"%s\n"
+" is not a \".jar\" file"
+msgstr ""
+"Die Datei:\n"
+"%s\n"
+"ist nicht ein \"jar.\" Datei"
+
+#: jadfactory.py:29
+#, python-format
+msgid ""
+"The file:\n"
+"%s not exist\n"
+"Make sure to print the correct path name\n"
+"Or use \"select a file\" button"
+msgstr ""
+"Die Datei:\n"
+"%s nicht vorhanden\n"
+"Stellen Sie sicher, den richtigen Pfad Namen ausdrucken\n"
+"oder verwenden \"wählen Sie eine Datei\" Taste"
+
+#: jadfactory.py:38
+#: jadfactory.py:84
+#, python-format
+msgid ""
+"File:\n"
+"%s\n"
+"   Is already exists\n"
+msgstr ""
+"Datei:\\n"
+"%s\\n"
+"   ist bereits vorhanden\n"
+
+#: jadfactory.py:52
+#: jadfactory.py:95
+#, python-format
+msgid ""
+"File : %s\n"
+"has created"
+msgstr ""
+"Datei:%s\\n"
+"\n"
+"erstellt wurde"
+
+#: jadfactory.py:60
+#: jadfactory.py:155
+#: jadfactory.py:206
+msgid "Select a file"
+msgstr "Wählen Sie eine Datei"
+
+#: jadfactory.py:68
+msgid "JAD file"
+msgstr "JAD Datei"
+
+#: jadfactory.py:105
+msgid "You don't select any file!"
+msgstr "Sie wählen Sie keine Datei!"
+
+#: jadfactory.py:116
+#: jadfactory.py:144
+#: jadfactory.py:186
+msgid "JADfactory"
+msgstr "JADfactory"
+
+#: jadfactory.py:117
+msgid "Beta v0.1"
+msgstr "Beta v0.1"
+
+#: jadfactory.py:118
+msgid ""
+"This is a simple Application\n"
+"to make jad files for *.jar"
+msgstr ""
+"Das ist eine einfache Anwendung\n"
+"zur jad Dateien für *. jar machen"
+
+#: jadfactory.py:119
+msgid "Copyright © 2011 Karim Oulad Chalha"
+msgstr "Copyright © 2011 Karim Oulad Chalha"
+
+#: jadfactory.py:120
+msgid ""
+"GPLv3\n"
+"See http://www.gnu.org/copyleft/gpl.html"
+msgstr ""
+"GPLv3\n"
+"See http://www.gnu.org/copyleft/gpl.html"
+
+#: jadfactory.py:121
+msgid "http://www.Jadfactory.co.cc"
+msgstr "http://www.Jadfactory.co.cc"
+
+#: jadfactory.py:122
+msgid "translator-credits"
+msgstr "Karim Oulad Chalha <herr.linux88@gmail.com>"
+
+#: jadfactory.py:145
+msgid "Welcome in JADfactory Beta v0.1"
+msgstr "Willkommen in JADfactory Beta v0.1"
+
+#: jadfactory.py:146
+msgid ""
+"\n"
+"NOTE :The name of file\n"
+"should not contient a space like:\n"
+"\"name file.jar\"\n"
+"make sure to rename it like:\n"
+"\"namefile.jar\" or \"name_file.jar\" , \"name-file.jar\" ,....\n"
+msgstr ""
+"\n"
+"HINWEIS:Der Name for Datei\n"
+"sollte nicht contient einen Raum wie:\n"
+"\"name file.jar\"\n"
+"stellen Sie sicher, es zu mögen umbenennen:\n"
+"\"namefile.jar\" oder \"name_file.jar\", \"name-file.jar\" ,....\n"
+
+#: jadfactory.py:151
+msgid "File"
+msgstr "Datei"
+
+#: jadfactory.py:152
+msgid "Help"
+msgstr "Hilfe"
+
+#: jadfactory.py:156
+#: jadfactory.py:214
+#: jadfactory.py:216
+msgid "Quit"
+msgstr "Verlassen"
+
+#: jadfactory.py:161
+msgid "What is JAD file?"
+msgstr "Was ist JAD Datei?"
+
+#: jadfactory.py:162
+msgid "Translate this application"
+msgstr "Translate this Anwendung"
+
+#: jadfactory.py:163
+msgid "Report a bug"
+msgstr "Fehler melden"
+
+#: jadfactory.py:164
+#: jadfactory.py:210
+#: jadfactory.py:212
+msgid "About"
+msgstr "Über"
+
+#: jadfactory.py:198
+msgid "run"
+msgstr "laufen"
+
+#: jadfactory.py:200
+msgid "Run to make *.jad file"
+msgstr "Run to *. jad Datei machen"
+
+#: jadfactory.py:203
+msgid "Type path here"
+msgstr "Geben Sie Pfad hier"
+
+#: jadfactory.py:208
+msgid "Select a *.jar file"
+msgstr "Wählen Sie eine *. jar Datei"
+
