@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 
 import gtk, pygtk, os, sys, shutil, string, gettext, locale, webbrowser
@@ -46,7 +46,7 @@ class JADbuilder:
                                   os.system("jadunzip %s" % file)
                                   O = open(jad, 'a')
                                   print >> O, "MIDlet-Jar-URL: %s" % FILE
-                                  print >> O, "MIDlet-Info-URL: http://"
+                                  print >> O, "MIDlet-Info-URL: http://jadfactory.blogspot.com/"
                                   print >> O, "MIDlet-Jar-Size: %s" % size
                                   O.close()
                                   msg2 = gtk.MessageDialog(None, gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_INFO, gtk.BUTTONS_CLOSE, _("File : %s\nhas created") % jad)
@@ -76,6 +76,7 @@ class JADbuilder:
                     print "Selected filepath: %s" % fs.get_filename()
                     FILE = os.path.basename('%s' % fs.get_filename())
                     size = os.path.getsize('%s' % fs.get_filename())
+                    self.textbox.set_text(fs.get_filename())
                     #Safety check1
                     filename = fs.get_filename()
                     jad = filename[0:-4]+".jad"
@@ -89,7 +90,7 @@ class JADbuilder:
                            os.system("jadunzip %s" % filename)
                            O = open(jad, 'a')
                            print >> O, "MIDlet-Jar-URL: %s" % FILE
-                           print >> O, "MIDlet-Info-URL: http://"
+                           print >> O, "MIDlet-Info-URL: http://jadfactory.blogspot.com/"
                            print >> O, "MIDlet-Jar-Size: %s" % size
                            O.close()
                            msg1 = gtk.MessageDialog(None, gtk.DIALOG_DESTROY_WITH_PARENT, gtk.MESSAGE_INFO, gtk.BUTTONS_CLOSE, _("File : %s\nhas created") % jad)
@@ -114,11 +115,11 @@ class JADbuilder:
              about.set_icon(gtk.gdk.pixbuf_new_from_file("/usr/share/pixmaps/jadfactory64.png"))
              about.set_logo(gtk.gdk.pixbuf_new_from_file("/usr/share/pixmaps/jadfactory/jadfactory180.png"))
              about.set_program_name(_("JADfactory"))
-             about.set_version(_("Beta v0.1"))
+             about.set_version(_("v1.1"))
              about.set_comments(_("This is a simple Application\nto make jad files for *.jar"))
              about.set_copyright(_("Copyright © 2011 Karim Oulad Chalha"))
              about.set_license(_("GPLv3\nSee http://www.gnu.org/copyleft/gpl.html"))
-             about.set_website(_("http://www.Jadfactory.co.cc"))
+             about.set_website(_("http://jadfactory.blogspot.com/"))
              about.set_translator_credits(_("translator-credits"))
              about.run()
              about.destroy()
@@ -142,7 +143,7 @@ class JADbuilder:
              self.win = gtk.Window(gtk.WINDOW_TOPLEVEL)                        #Main window
              self.win.set_icon(gtk.gdk.pixbuf_new_from_file("/usr/share/pixmaps/jadfactory64.png"))
              self.win.set_title(_("JADfactory"))
-             self.label = gtk.Label(_("""Welcome in JADfactory Beta v0.1"""))
+             self.label = gtk.Label(_("""Welcome in JADfactory v1.1"""))
              self.label1 = gtk.Label(_("""\nNOTE :The name of file\nshould not contient a space like:\n"name file.jar"\nmake sure to rename it like:\n"namefile.jar" or "name_file.jar" , "name-file.jar" ,....\n"""))
              self.win.set_position(gtk.WIN_POS_CENTER)
              self.win.set_default_size(350, 200)
@@ -194,6 +195,10 @@ class JADbuilder:
              self.info = gtk.InfoBar()                                         #Info Bar
              self.content = self.info.get_content_area()
              self.content.add(self.label1)
+             
+             self.expander = gtk.Expander("Important")                         #Expander
+             self.expander.set_tooltip_text("Important Information")
+             self.expander.add(self.info)
 
              self.rb = gtk.Button(_("run"))                                    #Run button
              self.rb.connect("clicked", self.run)
@@ -229,7 +234,7 @@ class JADbuilder:
              self.box1.pack_start(self.menu, False)
              self.box1.pack_start(self.label, False)
              self.box1.add(self.hs1)
-             self.box1.pack_start(self.info, False, False)
+             self.box1.pack_start(self.expander, False, False)
              self.box1.add(self.hs2)
              self.box1.pack_start(self.box6)
              self.box1.add(self.box4)
